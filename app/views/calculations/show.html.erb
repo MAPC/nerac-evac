@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Passengers mobile:</strong>
+  <%= @calculation.passengers_mobile %>
+</p>
+
+<p>
+  <strong>Passengers injured bedridden:</strong>
+  <%= @calculation.passengers_injured_bedridden %>
+</p>
+
+<p>
+  <strong>Passengers wheelchair bound:</strong>
+  <%= @calculation.passengers_wheelchair_bound %>
+</p>
+
+<p>
+  <strong>Shelter distance:</strong>
+  <%= @calculation.shelter_distance %>
+</p>
+
+<p>
+  <strong>Target completion time:</strong>
+  <%= @calculation.target_completion_time %>
+</p>
+
+<%= link_to 'Edit', edit_calculation_path(@calculation) %> |
+<%= link_to 'Back', calculations_path %>

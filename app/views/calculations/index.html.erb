@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Calculations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Passengers mobile</th>
+      <th>Passengers injured bedridden</th>
+      <th>Passengers wheelchair bound</th>
+      <th>Shelter distance</th>
+      <th>Target completion time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calculations.each do |calculation| %>
+      <tr>
+        <td><%= calculation.passengers_mobile %></td>
+        <td><%= calculation.passengers_injured_bedridden %></td>
+        <td><%= calculation.passengers_wheelchair_bound %></td>
+        <td><%= calculation.shelter_distance %></td>
+        <td><%= calculation.target_completion_time %></td>
+        <td><%= link_to 'Show', calculation %></td>
+        <td><%= link_to 'Edit', edit_calculation_path(calculation) %></td>
+        <td><%= link_to 'Destroy', calculation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Calculation', new_calculation_path %>
