@@ -69,6 +69,10 @@ class CalculationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def calculation_params
-      params.require(:calculation).permit(:passengers_mobile, :passengers_injured_bedridden, :passengers_wheelchair_bound, :shelter_distance, :target_completion_time)
+      params.require(:calculation).permit(:passengers_mobile, :passengers_injured_bedridden,
+        :passengers_wheelchair_bound, :shelter_distance, :target_completion_time, :distance_in_time,
+        :passengers_pet, :bus_capacity, :ambulance_capacity, :paratransit_capacity, :pet_capacity,
+        :bus_load_time, :ambulance_load_time, :paratransit_load_time, :wheelchair_load_time,
+        :pet_load_time, :vehicle_speed_mph)
     end
 end

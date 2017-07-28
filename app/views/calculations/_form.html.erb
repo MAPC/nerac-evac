@@ -27,13 +27,75 @@
   </div>
 
   <div class="field">
-    <%= f.label :shelter_distance %>
-    <%= f.text_field :shelter_distance %>
+    <%= f.label :passengers_pet %>
+    <%= f.number_field :passengers_pet %>
   </div>
 
   <div class="field">
-    <%= f.label :target_completion_time %>
+    <%= f.label :shelter_distance %>
+    <%= f.text_field :shelter_distance %>
+    Default distance setting is in miles.
+  </div>
+
+  <div class="field">
+    <%= f.check_box :distance_in_time %> <%= f.label 'Distance is in Hours' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :target_completion_time_in_hours %>
     <%= f.text_field :target_completion_time %>
+  </div>
+
+  <h2>Parameters</h2>
+
+  <h3>Vehicle Capacities</h3>
+
+  <div class="field">
+    <%= f.label :bus %>
+    <%= f.number_field :bus_capacity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ambulance %>
+    <%= f.number_field :ambulance_capacity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paratransit_vehicle %>
+    <%= f.number_field :paratransit_capacity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pet_vehicle %>
+    <%= f.number_field :pet_capacity %>
+  </div>
+
+  <h3>Passenger Load Times (Minutes)</h3>
+
+  <div class="field">
+    <%= f.label :bus %>
+    <%= f.number_field :bus_load_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ambulance %>
+    <%= f.number_field :ambulance_load_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paratransit_vehicle %>
+    <%= f.number_field :paratransit_load_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pet_vehicle %>
+    <%= f.number_field :pet_load_time %>
+  </div>
+
+  <h3>Road Conditions</h3>
+  <div class="field">
+    <%= f.label :vehicle_speed_mph %>
+    <%= f.number_field :vehicle_speed_mph %>
   </div>
 
   <div class="actions">

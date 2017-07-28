@@ -25,5 +25,24 @@
   <%= @calculation.target_completion_time %>
 </p>
 
-<%= link_to 'Edit', edit_calculation_path(@calculation) %> |
-<%= link_to 'Back', calculations_path %>
+<p>
+  <strong>Buses needed:</strong>
+  <%= @calculation.bus_vehicles %>
+</p>
+
+<p>
+  <strong>Ambulances needed:</strong>
+  <%= @calculation.ambulance_vehicles %>
+</p>
+
+<p>
+  <strong>Paratransit vehicles needed:</strong>
+  <%= @calculation.paratransit_vehicles %>
+</p>
+
+<p>
+  <strong>Pet vehicles needed:</strong>
+  <%= @calculation.pet_vehicles %>
+</p>
+
+<%= link_to 'Edit', edit_calculation_path(@calculation) %>
