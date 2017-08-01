@@ -34,7 +34,7 @@ class Calculation < ApplicationRecord
 
   def round_trip_time(passengers, passenger_load_time, vehicle_speed_mph)
     load_time_minutes = passengers * passenger_load_time
-    (load_time_minutes) / 60 + (distance_hours(vehicle_speed_mph) * 2)
+    load_time_minutes / (60 + (distance_hours(vehicle_speed_mph) * 2))
   end
 
   def distance_hours(vehicle_speed_mph)

@@ -1,48 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="grid-container">
+  <div class="row">
+    <h1><%= image_tag "nerac.png", size: "150x150" %> Emergency Vehicle Adequacy Calculator</h1>
+  </div>
+  <div class="row">
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>Passengers mobile:</strong>
+      <%= @calculation.passengers_mobile %>
+    </p>
 
-<p>
-  <strong>Passengers mobile:</strong>
-  <%= @calculation.passengers_mobile %>
-</p>
+    <p>
+      <strong>Passengers injured bedridden:</strong>
+      <%= @calculation.passengers_injured_bedridden %>
+    </p>
 
-<p>
-  <strong>Passengers injured bedridden:</strong>
-  <%= @calculation.passengers_injured_bedridden %>
-</p>
+    <p>
+      <strong>Passengers wheelchair bound:</strong>
+      <%= @calculation.passengers_wheelchair_bound %>
+    </p>
 
-<p>
-  <strong>Passengers wheelchair bound:</strong>
-  <%= @calculation.passengers_wheelchair_bound %>
-</p>
+    <p>
+      <strong>Shelter distance:</strong>
+      <%= @calculation.shelter_distance %>
+    </p>
 
-<p>
-  <strong>Shelter distance:</strong>
-  <%= @calculation.shelter_distance %>
-</p>
+    <p>
+      <strong>Target completion time:</strong>
+      <%= @calculation.target_completion_time %>
+    </p>
 
-<p>
-  <strong>Target completion time:</strong>
-  <%= @calculation.target_completion_time %>
-</p>
+    <p>
+      <strong>Buses needed:</strong>
+      <%= @calculation.bus_vehicles %>
+    </p>
 
-<p>
-  <strong>Buses needed:</strong>
-  <%= @calculation.bus_vehicles %>
-</p>
+    <p>
+      <strong>Ambulances needed:</strong>
+      <%= @calculation.ambulance_vehicles %>
+    </p>
 
-<p>
-  <strong>Ambulances needed:</strong>
-  <%= @calculation.ambulance_vehicles %>
-</p>
+    <p>
+      <strong>Paratransit vehicles needed:</strong>
+      <%= @calculation.paratransit_vehicles %>
+    </p>
 
-<p>
-  <strong>Paratransit vehicles needed:</strong>
-  <%= @calculation.paratransit_vehicles %>
-</p>
+    <p>
+      <strong>Pet vehicles needed:</strong>
+      <%= @calculation.pet_vehicles %>
+    </p>
 
-<p>
-  <strong>Pet vehicles needed:</strong>
-  <%= @calculation.pet_vehicles %>
-</p>
-
-<%= link_to 'Edit', edit_calculation_path(@calculation) %>
+    <p><%= link_to 'Edit', edit_calculation_path(@calculation) %></p>
+  </div>
+</div>

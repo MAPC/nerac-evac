@@ -1,104 +1,109 @@
-<%= form_for(calculation) do |f| %>
-  <% if calculation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(calculation.errors.count, "error") %> prohibited this calculation from being saved:</h2>
+<div class="small-12 medium-6 columns">
+  <%= form_for(calculation) do |f| %>
+    <% if calculation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(calculation.errors.count, "error") %> prohibited this calculation from being saved:</h2>
 
-      <ul>
-      <% calculation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% calculation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <h3>Passengers</h3>
+
+    <div class="field">
+      <%= f.label :mobile %>
+      <%= f.number_field :passengers_mobile %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :passengers_mobile %>
-    <%= f.number_field :passengers_mobile %>
+    <div class="field">
+      <%= f.label 'Injured or Bedridden' %>
+      <%= f.number_field :passengers_injured_bedridden %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Wheelchair Bound' %>
+      <%= f.number_field :passengers_wheelchair_bound %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Pets' %>
+      <%= f.number_field :passengers_pet %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Distance from Shelter' %>
+      <%= f.text_field :shelter_distance %>
+      Default distance setting is in miles.
+    </div>
+
+    <div class="field">
+      <%= f.check_box :distance_in_time %> <%= f.label 'Distance is in Hours' %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Target Completion Time (in Hours)' %>
+      <%= f.text_field :target_completion_time %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :passengers_injured_bedridden %>
-    <%= f.number_field :passengers_injured_bedridden %>
+  <div class="small-12 medium-6 columns">
+
+    <h3>Vehicle Capacities</h3>
+
+    <div class="field">
+      <%= f.label :bus %>
+      <%= f.number_field :bus_capacity %>
+    </div>
+
+    <div class="field">
+      <%= f.label :ambulance %>
+      <%= f.number_field :ambulance_capacity %>
+    </div>
+
+    <div class="field">
+      <%= f.label :paratransit_vehicle %>
+      <%= f.number_field :paratransit_capacity %>
+    </div>
+
+    <div class="field">
+      <%= f.label :pet_vehicle %>
+      <%= f.number_field :pet_capacity %>
+    </div>
+
+    <h3>Passenger Load Times (Minutes)</h3>
+
+    <div class="field">
+      <%= f.label :bus %>
+      <%= f.number_field :bus_load_time %>
+    </div>
+
+    <div class="field">
+      <%= f.label :ambulance %>
+      <%= f.number_field :ambulance_load_time %>
+    </div>
+
+    <div class="field">
+      <%= f.label :paratransit_vehicle %>
+      <%= f.number_field :paratransit_load_time %>
+    </div>
+
+    <div class="field">
+      <%= f.label :pet_vehicle %>
+      <%= f.number_field :pet_load_time %>
+    </div>
+
+    <h3>Road Conditions</h3>
+    <div class="field">
+      <%= f.label :vehicle_speed_mph %>
+      <%= f.number_field :vehicle_speed_mph %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :passengers_wheelchair_bound %>
-    <%= f.number_field :passengers_wheelchair_bound %>
-  </div>
-
-  <div class="field">
-    <%= f.label :passengers_pet %>
-    <%= f.number_field :passengers_pet %>
-  </div>
-
-  <div class="field">
-    <%= f.label :shelter_distance %>
-    <%= f.text_field :shelter_distance %>
-    Default distance setting is in miles.
-  </div>
-
-  <div class="field">
-    <%= f.check_box :distance_in_time %> <%= f.label 'Distance is in Hours' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :target_completion_time_in_hours %>
-    <%= f.text_field :target_completion_time %>
-  </div>
-
-  <h2>Parameters</h2>
-
-  <h3>Vehicle Capacities</h3>
-
-  <div class="field">
-    <%= f.label :bus %>
-    <%= f.number_field :bus_capacity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ambulance %>
-    <%= f.number_field :ambulance_capacity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :paratransit_vehicle %>
-    <%= f.number_field :paratransit_capacity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :pet_vehicle %>
-    <%= f.number_field :pet_capacity %>
-  </div>
-
-  <h3>Passenger Load Times (Minutes)</h3>
-
-  <div class="field">
-    <%= f.label :bus %>
-    <%= f.number_field :bus_load_time %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ambulance %>
-    <%= f.number_field :ambulance_load_time %>
-  </div>
-
-  <div class="field">
-    <%= f.label :paratransit_vehicle %>
-    <%= f.number_field :paratransit_load_time %>
-  </div>
-
-  <div class="field">
-    <%= f.label :pet_vehicle %>
-    <%= f.number_field :pet_load_time %>
-  </div>
-
-  <h3>Road Conditions</h3>
-  <div class="field">
-    <%= f.label :vehicle_speed_mph %>
-    <%= f.number_field :vehicle_speed_mph %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="cell medium-12 actions">
+    <%= f.submit 'Submit', class: 'button' %>
   </div>
 <% end %>

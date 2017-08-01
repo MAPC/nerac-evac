@@ -1,6 +1,10 @@
-<h1>Editing Calculation</h1>
+<div class="grid-container">
+  <div class="row">
+    <h1><%= image_tag "nerac.png", size: "150x150" %> Emergency Vehicle Adequacy Calculator</h1>
+  </div>
+  <div class="row">
+    <%= render 'form', calculation: @calculation %>
+  </div>
+</div>
 
-<%= render 'form', calculation: @calculation %>
-
-<%= link_to 'Show', @calculation %> |
-<%= link_to 'Back', calculations_path %>
+<%= link_to 'Show', @calculation %>
