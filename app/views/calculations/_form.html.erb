@@ -37,11 +37,11 @@
     <div class="field">
       <%= f.label 'Distance from Shelter' %>
       <%= f.text_field :shelter_distance %>
-      Default distance setting is in miles.
     </div>
 
     <div class="field">
-      <%= f.check_box :distance_in_time %> <%= f.label 'Distance is in Hours' %>
+      <%= f.radio_button :distance_in_time, "1" %> Hours
+      <%= f.radio_button :distance_in_time, "0" %> Miles
     </div>
 
     <div class="field">
